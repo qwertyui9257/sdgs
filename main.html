@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<html>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+    <body>
+        <script>
+            function changeimg(dev){
+                var x = document.getElementById("text")
+                if (dev==1){
+                document.getElementById("img").src = "./elevatorimg/elyjy1.jpg";
+                x.innerText='엘리베이터 경로'
+                var ex = document.getElementById("bottom")
+                ex.innerHTML=`<span><button class= 'bbtn' type="button" onclick="nexit('1', 'a')">1번 출구</button></span>
+                              <span><button class= 'bbtn' type="button" onclick="nexit('2', 'a')">2번 출구</button></span>
+                              <span><button class= 'bbtn' type="button" onclick="nexit('3', 'a')">3번 출구</button></span>
+                              <span><button class= 'bbtn' type="button" onclick="nexit('4', 'a')">4번 출구</button></span>
+                              <span><button class= 'bbtn' type="button" onclick="nexit('5', 'a')">5번 출구</button></span>`
+                }
+                else if (dev==2){
+                document.getElementById("img").src = "./liftimg/liyjy1.jpg"
+                x.innerText='휠체어리프트 경로'
+                var ex = document.getElementById("bottom")
+                ex.innerHTML=`<span><button class= 'bbtn' type="button" onclick="nexit('1', 'b')">1번 출구</button></span>
+                              <span><button class= 'bbtn' type="button" onclick="nexit('2', 'b')">2번 출구</button></span>
+                              <span><button class= 'bbtn' type="button" onclick="nexit('3', 'b')">3번 출구</button></span>
+                              <span><button class= 'bbtn' type="button" onclick="nexit('4', 'b')">4번 출구</button></span>
+                              <span><button class= 'bbtn' type="button" onclick="nexit('5', 'b')">5번 출구</button></span>`
+                              
+                }
+                else
+                document.write("err")
+            }
+            function nexit(n,m){
+                    if(m=='a'){
+                        document.getElementById("img").src = "./elevatorimg/elyjy"+n+".jpg";
+                    }
+                    else{
+                        document.getElementById("img").src = "./liftimg/liyjy"+n+".jpg";
+                    }
+
+            }
+        </script>
+
+    <div id="main">
+        <div id="top">
+                <img id="logo" src="./loggo.png" style="width: 50px; height: 50px;">
+            <div id="text">
+                엘리베이터
+            </div>
+        </div>
+        <div id="content">
+            <div>
+            <div align="center"><button class= 'btn' type="button" onclick="changeimg(1)">엘리베이터</button></div>
+            <div align="center"><button class= 'btn' type="button" onclick="changeimg(2)">휠체어 리프트</button></div>
+            </div>
+            <div><img id= "img" src="./elevatorimg/elyjy1.jpg"></div>
+        </div>
+        <div id="bottom" align="center">
+        <span><button class= 'bbtn' type="button" onclick="nexit('1', 'a')">1번 출구</button></span>
+        <span><button class= 'bbtn' type="button" onclick="nexit('2', 'a')">2번 출구</button></span>
+        <span><button class= 'bbtn' type="button" onclick="nexit('3', 'a')">3번 출구</button></span>
+        <span><button class= 'bbtn' type="button" onclick="nexit('4', 'a')">4번 출구</button></span>
+        <span><button class= 'bbtn' type="button" onclick="nexit('5', 'a')">5번 출구</button></span>
+        </div>
+    </div>
+    
+    </body>
+    
+</html>
